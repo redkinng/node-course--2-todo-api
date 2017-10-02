@@ -24,7 +24,7 @@ app.post('/todos', (req, res) => {
 
 app.get('/todos', (req, res)=>{
     Todo.find().then((todos)=>{
-      res.send(todos);
+      res.send({todos});
     },(e)=>{
       res.status(400).send(e);
     })
@@ -32,7 +32,7 @@ app.get('/todos', (req, res)=>{
 
 
 app.listen(3000, ()=>{
-  console.log('Started on port number 3000');
+  console.log('Started on port number 3000 \n');
 });
 
 module.exports = {app};
